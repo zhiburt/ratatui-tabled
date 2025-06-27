@@ -9,7 +9,7 @@ use tabled::{
         dimension::{Estimate, PeekableGridDimension},
         records::vec_records::{Text, VecRecords},
     },
-    settings::{Alignment, Color, Padding, Span, Style},
+    settings::{Alignment, Color, Padding, Span, Style, themes::ColumnNames},
 };
 
 fn main() {
@@ -46,6 +46,7 @@ fn get_grid() -> Grid {
         table
             .with(Style::ascii())
             .with(Alignment::center_vertical())
+            .with(ColumnNames::new(["tabled"]).alignment(Alignment::center()))
             .modify((1, 0), Alignment::center())
             .modify((0, 0), Padding::new(4, 4, 1, 1))
             .modify((0, 0), Span::row(0))
