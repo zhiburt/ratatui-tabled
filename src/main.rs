@@ -12,6 +12,14 @@ use tabled::{
     settings::{Alignment, Color, Padding, Span, Style, themes::ColumnNames},
 };
 
+use ratatui::{
+    DefaultTerminal, Frame,
+    crossterm::event::{self, Event},
+    layout::{Constraint, Layout, Rect},
+    text::Text as RatatuiText,
+    widgets::TableState,
+};
+
 fn main() {
     let grid = get_grid();
 
@@ -120,14 +128,6 @@ impl Typewriter for RatatuiWriter<'_, '_> {
         Ok(())
     }
 }
-
-use ratatui::{
-    DefaultTerminal, Frame,
-    crossterm::event::{self, Event},
-    layout::{Constraint, Layout, Rect},
-    text::Text as RatatuiText,
-    widgets::TableState,
-};
 
 struct App {
     _state: TableState,
