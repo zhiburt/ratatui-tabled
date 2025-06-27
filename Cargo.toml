@@ -1,0 +1,8 @@
+[package]
+name = "ratatui-table-example"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ratatui = "0.29"
+tabled = { git = "https://github.com/zhiburt/tabled", rev = "e98042dad737c3f134352bac114b82356f5fad2a" }
